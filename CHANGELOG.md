@@ -1,3 +1,6 @@
+## [0.1.9] - 15.10.2018
+* Support Motion permission (iOS)
+
 ## [0.1.8] - 24.09.2018
 * Targeting Android API 27
 

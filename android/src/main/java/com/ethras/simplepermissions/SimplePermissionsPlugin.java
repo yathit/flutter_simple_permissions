@@ -24,6 +24,8 @@ public class SimplePermissionsPlugin implements MethodCallHandler, PluginRegistr
     private Registrar registrar;
     private Result result;
 
+    private static String MOTION_SENSOR = "MOTION_SENSOR";
+
     /**
      * Plugin registration.
      */
@@ -48,15 +50,27 @@ public class SimplePermissionsPlugin implements MethodCallHandler, PluginRegistr
                 break;
             case "getPermissionStatus":
                 permission = call.argument("permission");
+                if (MOTION_SENSOR.equalsIgnoreCase(permission)) {
+                    result.success(3);
+                    break;
+                }
                 int value = checkPermission(permission) ? 3 : 2;
                 result.success(value);
                 break;
             case "checkPermission":
                 permission = call.argument("permission");
+                if (MOTION_SENSOR.equalsIgnoreCase(permission)) {
+                    result.success(true);
+                    break;
+                }
                 result.success(checkPermission(permission));
                 break;
             case "requestPermission":
                 permission = call.argument("permission");
+                if (MOTION_SENSOR.equalsIgnoreCase(permission)) {
+                    result.success(3);
+                    break;
+                }
                 this.result = result;
                 requestPermission(permission);
                 break;
