@@ -1,5 +1,6 @@
 ## [0.1.9] - 15.10.2018
 * Support Motion permission (iOS)
+* Reduce minimum iOS deployment target to 9.3
 
 ## [0.1.8] - 24.09.2018
 * Targeting Android API 27
