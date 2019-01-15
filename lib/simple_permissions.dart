@@ -67,6 +67,7 @@ class SimplePermissions {
 enum Permission {
   RecordAudio,
   CallPhone,
+  ReadCallLog,
   Camera,
   PhotoLibrary,
   WriteExternalStorage,
@@ -148,6 +149,9 @@ String getPermissionString(Permission permission) {
     case Permission.AccessMotionSensor:
       res = "MOTION_SENSOR";
       break;
+    case Permission.ReadCallLog:
+      res = "READ_CALL_LOG";
+      break;      
   }
   return res;
 }
